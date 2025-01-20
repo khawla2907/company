@@ -838,25 +838,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // HERO SECTION SCROLL ANIMATION
-    const heroText = document.querySelector('.hero-text'); // Ensure you target the text you want to animate
-
-    // Check if hero text exists before applying IntersectionObserver
-    if (heroText) {
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Add 'active' class when the hero section comes into view
-                    entry.target.classList.add('active');
-                }
-            });
-        }, {
-            threshold: 0.5 // Trigger when 50% of the hero section is in the viewport
-        });
-
-        heroObserver.observe(heroText); // Observe the hero text for visibility
-    }
-
+   
     // ABOUT US SECTION SCROLL ANIMATION (same as before)
     const aboutSection = document.querySelector('.about-us-section');
 
