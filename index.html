@@ -18,8 +18,7 @@
     * {
       margin: 0;
       padding: 0;
-            box-sizing: border-box;
-    
+      box-sizing: border-box;
     }
 
     /* Body and background */
@@ -155,6 +154,7 @@
   color: white;
   overflow: hidden;
   animation: slideBackground 15s infinite; /* Background slide effect */
+  background-image: url('images/spices.jpg');
 }
 
 /* Hero Text */
@@ -837,7 +837,8 @@
       }
     }
 
-    @media (max-width: 360px) {
+
+    @media (max-width: 380px) {
   /* Body and General Styling */
   body {
     font-size: 14px; /* Adjust base font size for readability */
@@ -861,24 +862,47 @@
     height: 2px;
   }
 
-  /* Hero Section */
   .hero {
-    height: auto; /* Allow auto height for smaller screens */
-    padding: 20px;
+  overflow: hidden;
+}
+
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+  .hero {
+    height: auto; /* Allow height to adjust to content */
+    padding: 100px 70px; /* Add padding for proper spacing */
+    display: flex; /* Center align content */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: center; /* Center-align items vertically */
+    text-align: center; /* Center-align text */
   }
 
-  .hero-text {
-    font-size: 1.2em; /* Smaller font size for hero text */
+  .hero h1 {
+    font-size: 1.4em; /* Adjust font size for smaller screens */
+    line-height: 1.2; /* Ensure spacing between lines */
+    margin-bottom: 10px;
   }
 
-  .hero-text h1 {
-    font-size: 1.5em;
-    line-height: 1.3; /* Adjust line height */
+  .hero p {
+    font-size: 1em; /* Adjust paragraph size */
+    margin-bottom: 15px;
   }
+
 
   /* CTA Button */
   .cta-btn {
-    font-size: 0.9em;
+    font-size: 0.5em;
     padding: 10px 15px;
   }
 
@@ -1022,7 +1046,7 @@
     <div class="hero-text">
       <h1>Bringing the World's Finest Spices </h1>
      
-      <a href="#products" class="cta-btn">Discover Our Products</a>
+
     </div>
   </section>
   
