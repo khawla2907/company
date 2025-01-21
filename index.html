@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Al Haram International Import And Export</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -39,11 +39,11 @@
 
     /* Top Bar for Address, Phone, and Email */
     .top-bar {
-  background-color: #333;
+  background-color: black;
   color: white;
   padding: 8px 10px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -96,7 +96,7 @@
         .nav-links a {
             position: relative;
             text-decoration: none;
-            color: #003366;
+            color: black;
             font-size: 1.1em;
             transition: color 0.3s ease;
         }
@@ -135,7 +135,7 @@
 
         .menu-toggle span {
             width: 35px;
-            height: 5px;
+            height: 3px;
             background-color: black;
             margin: 5px;
         }
@@ -186,7 +186,7 @@
 
 .cta-btn {
   padding: 12px 25px;
-  font-size: 18px;
+  font-size: 15px;
   background-color: rgba(212, 175, 55, 0.8);
   color: white;
   text-decoration: none;
@@ -298,7 +298,7 @@
       .nav-links {
   display: none;
   position: fixed;
-  top: 93px;
+  top: 95px;
   left: 0;
   right: 0;
   background-color: rgba(212, 175, 55, 0.8); /* Translucent rich gold */
@@ -615,6 +615,179 @@
   height: 50px;
 }
 
+/* Section Styling */
+.why-choose-us {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 18px;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  /* Golden glowing border */
+  border: 2px solid #FFD700; /* Solid gold border */
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
+  animation: glow 1.5s ease-in-out infinite; /* Animation for glowing effect */
+}
+
+.why-choose-us h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #FFD700; /* Gold color */
+}
+
+/* Circle container for the large circle and small circles */
+.circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-circle {
+  width: 250px; /* Increased size for the main circle */
+  height: 250px;
+  border-radius: 50%;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 40px; /* Space between main circle and small circles */
+}
+
+.main-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.small-circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.small-circle {
+  width: 120px;
+  height: 120px;
+  background-color: #FFD700; /* Gold color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a1a1a; /* Dark text */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-circle span {
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.small-circle:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .small-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 10px;
+  }
+}
+
+
+/* Transition delay for each circle */
+.small-circle:nth-child(1) {
+  transition-delay: 0.3s;
+}
+
+.small-circle:nth-child(2) {
+  transition-delay: 0.6s;
+}
+
+.small-circle:nth-child(3) {
+  transition-delay: 0.9s;
+}
+
+.small-circle:nth-child(4) {
+  transition-delay: 1.2s;
+}
+
+/* When circles become active (in view) */
+.small-circle {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for opacity and scale */
+}
+
+.small-circle.active {
+  opacity: 1;
+  transform: scale(1); /* Scale up when the circle becomes visible */
+}
+
+.map-section {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 1.5em;
+}
+
+#map {
+  width: 100%;
+  height: 400px; /* Set height as needed */
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  /* Adjust the size of the main circle for mobile */
+  .main-circle {
+    width: 200px; /* Smaller size on mobile */
+    height: 200px;
+    margin-bottom: 30px;
+  }
+
+  
+
+  /* Fix layout for the empty space issue on the right */
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  /* Add more spacing on mobile for general layout */
+  .why-choose-us {
+    padding: 40px 20px;
+  }
+
+  /* Adjust font size of main heading for mobile */
+  .why-choose-us h2 {
+    font-size: 2em;
+  }
+}
+
+/* For very small screens (portrait mode of very small phones) */
+@media (max-width: 480px) {
+  .main-circle {
+    width: 180px; /* Even smaller size on very small screens */
+    height: 180px;
+  }
+
+  
+}
 
 
 /* Make the layout responsive */
@@ -676,7 +849,7 @@
       <a href="tel:+92222621746"><strong>+92 22 2621746</strong></a> | 
       Address: 
       <a href="https://www.google.com/maps/place/Al+Haram+International/@25.3985483,68.3713783,17z/data=!3m1!4b1!4m6!3m5!1s0x394c70dd66fd60a7:0x92e661f66e41ffeb!8m2!3d25.3985483!4d68.3713783!16s%2Fg%2F11csrytzfg?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-        <strong> Grain Near bel khana road Market,Hyderabad, Sindh</strong>
+        <strong> Grain Near bel khana road Market,Hyderabad, Sindh,Pakistan</strong>
       </a>
     </p>
   </div>
@@ -691,9 +864,8 @@
       <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="About-us.html">About Us</a></li>
-          <li><a href="FAQ.html">FAQs</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="guarantee.html">Our Guarantee</a></li>
+          <li><a href="FAQ.html">Our Products</a></li>
+      
           <li><a href="contact-us.html">Contact Us</a></li>
       </ul>
       <div class="menu-toggle">
@@ -734,32 +906,62 @@
         <div class="product">
             <img src="images/seed.jpg" alt="Mustard Seeds">
             <h3>Mustard Seeds</h3>
-            <p class="product-description">High-quality mustard seeds used for various ....</p>
+            <p class="product-description">High-quality mustard seeds used for various....</p>
             <a href="#" class="read-more-btn">Read More</a>
         </div>
         <div class="product">
             <img src="images/red.jpg" alt="Red Chilli Powder">
             <h3>Red Chilli Powder</h3>
-            <p class="product-description">A rich blend of red chilies, providing the perfect spice ....</p>
+            <p class="product-description">A rich blend of red chilies...</p>
             <a href="#" class="read-more-btn">Read More</a>
         </div>
         <div class="product">
             <img src="images/nig.jpg" alt="Nigella Seeds">
             <h3>Nigella Seeds</h3>
-            <p class="product-description">Nigella seeds, often known as black cumin ....</p>
+            <p class="product-description">Nigella seeds, often known as black cumin....</p>
             <a href="#" class="read-more-btn">Read More</a>
         </div>
         <div class="product">
             <img src="images/plum.jpg" alt="Plum Powder">
             <h3>Plum Powder</h3>
-            <p class="product-description">A tangy, sweet powder made from dried plums  ....</p>
+            <p class="product-description">A tangy, sweet powder made from dried plums.....</p>
             <a href="#" class="read-more-btn">Read More</a>
         </div>
     </div>
     <a href="products.html" class="see-more-btn">See More</a>
 </section>
 
-  
+<section class="why-choose-us">
+  <h2>Why Choose Us?</h2>
+  <div class="circle-container">
+    <div class="main-circle">
+      <img src="images/whychoose.png" alt="Main Image">
+    </div>
+    <div class="small-circles">
+      <div class="small-circle" data-title="High Quality Spices">
+        <span>High Quality Spices</span>
+      </div>
+      <div class="small-circle" data-title="Reliable and Fast Delivery">
+        <span>Reliable & Fast Delivery</span>
+      </div>
+      <div class="small-circle" data-title="Competitive Pricing">
+        <span>Competitive Pricing</span>
+      </div>
+      <div class="small-circle" data-title="Excellent Customer Service">
+        <span>Excellent Customer Service</span>
+      </div>
+    </div>
+    
+</section>
+
+<section class="map-section">
+  <h2>Our Location</h2>
+  <div id="map"></div>
+</section>
+
+
+
+  <Br>
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
@@ -777,9 +979,9 @@
           <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="About-us.html">About Us</a></li>
-              <li><a href="FAQ.html">FAQs</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="guarantee.html">Guarantee</a></li>
+          
+              <li><a href="pricing.html">Our Products</a></li>
+         
               <li><a href="contact-us.html">Contact Us</a></li>
           </ul>
       </div>
@@ -798,6 +1000,12 @@
   <img src="images/whatsapp-removebg-preview.png" class="whatsapp-icon">
 </a>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
 
   <script>
 
@@ -838,7 +1046,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-   
+    // HERO SECTION SCROLL ANIMATION
+    const heroText = document.querySelector('.hero-text'); // Ensure you target the text you want to animate
+
+    // Check if hero text exists before applying IntersectionObserver
+    if (heroText) {
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add 'active' class when the hero section comes into view
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.5 // Trigger when 50% of the hero section is in the viewport
+        });
+
+        heroObserver.observe(heroText); // Observe the hero text for visibility
+    }
+
     // ABOUT US SECTION SCROLL ANIMATION (same as before)
     const aboutSection = document.querySelector('.about-us-section');
 
@@ -890,13 +1116,66 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-    
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const smallCircles = document.querySelectorAll('.small-circle'); // Select all small circles
+
+  // Intersection Observer for individual circles
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active'); // Add 'active' class when circle enters the viewport
+      } else {
+        entry.target.classList.remove('active'); // Optionally remove 'active' class when the circle leaves the viewport
+      }
+    });
+  }, {
+    threshold: 0.5 // Trigger when at least 50% of the element is in view
+  });
+
+  // Observe each small circle
+  smallCircles.forEach(circle => {
+    observer.observe(circle);
+  });
+});
+
     
 
-        
 
+    
   </script>
 
+
+<script>
+  // Initialize the map function
+  function initMap() {
+    // The location of Al Haram International
+    const location = { lat: 25.3985483, lng: 68.3713783 };
+
+    // The map, centered at Al Haram International
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15, // Set the zoom level
+      center: location, // Set the center point of the map
+    });
+
+    // The marker, positioned at Al Haram International
+    const marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      title: "Al Haram International", // Text that shows when the marker is hovered over
+    });
+  }
+</script>
+
+<!-- Load Google Maps JavaScript API with your API Key -->
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAekM2nsdCz-lvC7w2n5tRzmgz16IHcHAM&callback=initMap"
+  async
+  defer
+></script>
 
 
 </body>
