@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Al Haram International Import And Export</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+ <!-- For favicon on tab -->
+ <link rel="icon" href="images/logo.png" type="image/x-icon">
+    
+
+ 
+ <!-- For mobile devices (optional) -->
+ <link rel="apple-touch-icon" href="images/logo.png">
+ <style>
+ /* Basic Reset */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ /* Body and Background */
+ body {
+   font-family: 'Roboto', sans-serif;
+   height: 100vh;
+   overflow-x: hidden;
+   background-color: #000; /* Black background */
+   color: #cea623; /* Rich gold text */
+   position: relative;
+ }
+ 
+ /* Top Bar for Address, Phone, and Email */
+ .top-bar {
+   background-color: black;
+   color: white;
+   padding: 8px 10px;
+   text-align: center;
+   font-size: 12px;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 9999;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+ }
+ 
+ .top-bar a {
+   color: #cea623;
+   text-decoration: none;
+ }
+ 
+ /* Navbar */
+ .navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 30px;
+   background-color: rgba(212, 175, 55, 0.8);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   position: fixed;
+   width: 100%;
+   top: 30px; /* Offset by top bar height */
+   z-index: 1000;
+   backdrop-filter: blur(10px);
+   border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+ }
+ 
+ .logo img {
+   height: 70px;
+   width: auto;
+ }
+ 
+ .nav-links {
+   display: flex;
+   list-style: none;
+ }
+ 
+ .nav-links li {
+   margin: 0 20px;
+ }
+ 
+ .nav-links a {
+   position: relative;
+   text-decoration: none;
+   color: black;
+   font-size: 1.1em;
+   transition: color 0.3s ease;
+ }
+ 
+ /* Underline Animation */
+ .nav-links a::after {
+   content: '';
+   position: absolute;
+   width: 0;
+   height: 2px;
+   background: black;
+   left: 50%;
+   bottom: -5px;
+   transition: width 0.3s ease, left 0.3s ease;
+ }
+ 
+ .nav-links a:hover::after {
+   width: 100%;
+   left: 0;
+ }
+ 
+ .nav-links a:hover {
+   color: black;
+ }
+ 
+ .nav-links a.active {
+   color: black;
+   font-weight: bold;
+ }
+ 
+ /* Mobile Menu Toggle */
+ .menu-toggle {
+   display: none;
+   flex-direction: column;
+   cursor: pointer;
+ }
+ 
+ .menu-toggle span {
+   width: 35px;
+   height: 3px;
+   background-color: black;
+   margin: 5px;
+ }
+ 
+ /* Footer Section */
+ .footer {
+   background-color: rgba(235, 191, 49, 0.9);
+   color: black;
+   padding: 40px 20px;
+   width: 100%;
+   box-sizing: border-box;
+   border-top: 1px solid rgba(184, 146, 22, 0.5);
+   backdrop-filter: blur(10px);
+   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .footer-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   max-width: 1200px;
+   margin: 0 auto;
+ }
+ 
+ .footer-logo {
+   margin-right: 20px;
+ }
+ 
+ .footer-logo img {
+   height: 100px;
+   width: auto;
+ }
+ 
+ .footer-info,
+ .footer-links,
+ .footer-contact {
+   color: black;
+   flex: 1;
+   min-width: 200px;
+   margin: 10px;
+   text-align: left;
+ }
+ 
+ .footer-info h2 {
+   font-size: 1.8em;
+   margin-bottom: 10px;
+ }
+ 
+ .footer-links ul {
+   list-style: none;
+   padding: 0;
+ }
+ 
+ .footer-links li {
+   margin: 5px 0;
+ }
+ 
+ .footer-links a {
+   color: black;
+   text-decoration: none;
+   transition: color 0.3s;
+ }
+ 
+ .footer-links a:hover {
+   text-decoration: underline;
+ }
+ 
+ .footer-bottom {
+   margin-top: 20px;
+   text-align: center;
+   font-size: 0.8em;
+ }
+
+/* Adjust main padding to prevent overlapping */
+main {
+    padding-top: 105px; /* 50px (.top-bar) + 55px (header) */
+}
+
+
+        
+
+/* Section Styles */
+.section {
+    display: flex;
+    padding: 50px 20px; /* Added horizontal padding */
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.section:nth-child(even) {
+    flex-direction: row-reverse;
+    transform: translateX(-100%);
+}
+
+.text,
+.image {
+    flex: 1;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.text h2 {
+    font-size: 2rem;
+    color: goldenrod;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.text p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.image-left,
+.image-right {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    /* Golden glowing border */
+  border: 2px solid #FFD700; /* Solid gold border */
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
+  animation: glow 1.5s ease-in-out infinite; /* Animation for glowing effect */
+}
+
+.image-left img,
+.image-right img {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Set a reasonable max-width */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-left img:hover,
+.image-right img:hover {
+    transform: scale(1.05);
+}
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.whatsapp-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles for Sections */
+@media (max-width: 768px) {
+    /* Override flex-direction for all sections */
+    .section {
+        flex-direction: column !important;
+        padding: 30px 10px;
+        text-align: center;
+        opacity: 1 !important; /* Ensure sections are visible */
+        transform: translateX(0) !important; /* Reset transform */
+    }
+
+    .section:nth-child(even) {
+        flex-direction: column !important; /* Override row-reverse */
+        transform: translateX(0) !important;
+    }
+
+    .text {
+        padding: 10px 0;
+    }
+
+    .image-left,
+    .image-right {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .image-left img,
+    .image-right img {
+        width: 90%;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+
+    .text h2 {
+        font-size: 1.8rem;
+    }
+
+    .text p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    
+
+
+             
+
+
+
+    /* Disable Section Animations on Mobile */
+    .section {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 20px 5px;
+    }
+
+    .text h2 {
+        font-size: 1.5rem;
+    }
+
+    .text p {
+        font-size: 1rem;
+    }
+
+    .image-left img,
+    .image-right img {
+        width: 100%;
+        max-width: 100%;
+        margin: 15px auto;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .nav-links {
+     display: none;
+     position: fixed;
+     top: 95px;
+     left: 0;
+     right: 0;
+     background-color: rgba(212, 175, 55, 0.8);
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     transition: transform 0.3s ease-in-out;
+     transform: translateY(-100%);
+     z-index: 999;
+     width: 100%;
+   }
+ 
+   .nav-links.active {
+     display: flex;
+     transform: translateY(0);
+   }
+ 
+   .nav-links li {
+     margin: 15px 0;
+   }
+ 
+   .menu-toggle {
+     display: flex;
+     cursor: pointer;
+     justify-content: center;
+     align-items: center;
+   }
+ 
+   .menu-toggle span {
+     background-color: black;
+   }
+ 
+   .footer-content {
+     flex-direction: column;
+     align-items: center;
+   }
+ 
+   .footer-info,
+   .footer-links,
+   .footer-contact {
+     text-align: center;
+     margin: 20px 0;
+   }
+ }
+ 
+ @media (max-width: 380px) {
+   body {
+     font-size: 14px;
+   }
+ 
+   .navbar {
+     padding: 10px 15px;
+   }
+ 
+   .nav-links {
+     font-size: 0.9em;
+   }
+ 
+   .menu-toggle span {
+     width: 25px;
+     height: 2px;
+   }
+ 
+   .footer-content {
+     flex-direction: column;
+     text-align: center;
+   }
+ 
+   .footer-logo img {
+     width: 80px;
+   }
+ 
+   .footer-bottom {
+     font-size: 0.8em;
+   }
+ 
+   .top-bar {
+     font-size: 10px;
+   }
+ }
+ 
+
+    </style>
+</head>
+
+<body>
+  <!-- Top Bar for Address, Phone, and Email -->
+  <div class="top-bar">
+    <p>
+      Contact Us: 
+      <a href="mailto:al.haramintl@yahoo.com"><strong>al.haramintl@yahoo.com</strong></a>
+
+      Call: 
+      <a href="tel:+92222621746"><strong>+92 22 2621746</strong></a> | 
+      Address: 
+      <a href="https://www.google.com/maps/place/Al+Haram+International/@25.3985483,68.3713783,17z/data=!3m1!4b1!4m6!3m5!1s0x394c70dd66fd60a7:0x92e661f66e41ffeb!8m2!3d25.3985483!4d68.3713783!16s%2Fg%2F11csrytzfg?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+        <strong> Grain Near bel khana road Market,Hyderabad, Sindh,Pakistan</strong>
+      </a>
+    </p>
+  </div>
+  
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+          <a href="index.html">
+              <img src="images/logo.png" alt="logo">
+          </a>
+      </div>
+      <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="FAQ.html">Our Products</a></li>
+      
+          <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+      <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+  </nav>
+
+
+
+   <main>
+
+        <!-- First Section -->
+        <section class="section" id="section1">
+            <div class="text">
+                <h2>Our Mission</h2>
+                <p>At Al Haram International, we are dedicated to delivering premium-quality spices and exceptional service to our clients worldwide. Our mission is to source and supply the finest spices, ensuring freshness, flavor, and excellence in every shipment. We strive to build lasting partnerships with our clients by understanding their unique needs and providing customized solutions. Through our commitment to quality, integrity, and reliability, we aim to enhance culinary experiences across the globe while supporting the growth and success of our partners.</p>
+            </div>
+            <div class="image-right">
+                <img src="images/spices.jpg" alt="Our Mission" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Second Section -->
+        <section class="section" id="section2">
+            <div class="text">
+                <h2>Our Vision</h2>
+                <p>We aspire to be the global leader in the import and export of premium spices, recognized for our unwavering commitment to quality, sustainability, and customer satisfaction. Our vision is to connect cultures and cuisines through the finest flavors, empowering businesses and individuals to create extraordinary culinary experiences. By continually improving our processes and staying ahead of market trends, we aim to set new benchmarks in the spice trade and contribute to a vibrant and sustainable global food industry.</p>
+            </div>
+            <div class="image-left">
+                <img src="images/logo.png" alt="Our Vision" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Third Section -->
+        <section class="section" id="section3">
+            <div class="text">
+                <h2>Our Values</h2>
+                <p>Integrity is the foundation of our business, and we conduct every aspect of our operations with honesty and transparency to build trust with our clients and partners. Quality is at the heart of everything we do, from sourcing the finest spices to delivering impeccable service that exceeds expectations. Sustainability is also a core pillar of our values, and we are committed to ethical sourcing and sustainable practices that ensure the well-being of the farmers, communities, and environments we engage with. We prioritize understanding and meeting the needs of our clients, always aiming to deliver exceptional customer service. Collaboration is equally important to us, as we believe that fostering strong relationships with our team, partners, and clients is key to achieving shared success.</p>
+            </div>
+            <div class="image-right">
+                <img src="images/spices2.jpg" alt="Our Values" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Fourth Section -->
+        <section class="section" id="section4">
+            <div class="text">
+                <h2>Our Team</h2>
+                <p>Our team at Al Haram International consists of skilled professionals with deep expertise in the spice trade. From sourcing and quality control to logistics and customer service, each team member plays a crucial role in ensuring the satisfaction of our clients. We are passionate about what we do and driven by a shared commitment to excellence, innovation, and customer care. Together, we work tirelessly to bring the world closer through the vibrant and rich flavors of our spices</p>
+            </div>
+            <div class="image-left">
+                <img src="images/spices4.jpg" alt="Our Team" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+  
+    
+
+            <!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+      <div class="footer-logo">
+          <a href="index.html">
+              <img src="images/logo.png" alt="Trademark Savior Logo" />
+          </a>
+      </div>
+      <div class="footer-info">
+          <h2>Al Haram International Import And Export</h2>
+          <p>Al Haram offers a wide range of premium spices sourced from the finest producers. We specialize in the import and export of high-quality spices and seasonings, ensuring the best flavors for your culinary needs. Our dedicated team works tirelessly to provide exceptional service, including bulk orders, custom spice blends, and reliable distribution. Contact us today to discover how we can elevate your culinary experience with our top-tier spices.</p>
+      </div>
+      <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+          
+              <li><a href="pricing.html">Our Products</a></li>
+         
+              <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+      </div>
+      <div class="footer-contact">
+<h3 style="color: black;">Quick Info</h3>
+<p><a href="mailto:al.haramintl@yahoo.com" style="color: black; text-decoration: none;">al.haramintl@yahoo.com</a></p>
+<p><a href="https://www.google.com/maps?q=7901+4th+St+N,+St.+Petersburg,+FL+33702,+USA" target="_blank" style="color: black; text-decoration: none;"> Grain Near bel khana road Market,Hyderabad, Sindh</a></p>
+<span><a href="tel:+922226121746" style="color: black; text-decoration: none;">+922226121746</a></span>
+
+      </div>
+  </div>
+</footer>
+
+ <!-- WhatsApp Floating Icon -->
+ <a href="https://api.whatsapp.com/send/?phone=922226121746&text&type=phone_number&app_absent=0" class="whatsapp-float">
+  <img src="images/whatsapp-removebg-preview.png" class="whatsapp-icon">
+</a>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+    <script>
+         
+         document.addEventListener('DOMContentLoaded', () => {
+      // Menu Toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const navItems = document.querySelectorAll('.nav-links a');
+  
+      // Toggle mobile menu
+      menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  
+      // Highlight the current active page in the navigation
+      const currentLocation = window.location.href;
+      navItems.forEach(item => {
+          if (currentLocation.includes(item.getAttribute('href'))) {
+              item.classList.add('active');
+          } else {
+              item.classList.remove('active');
+          }
+      });
+  
+      // Close menu when a link is clicked
+      navItems.forEach(item => {
+          item.addEventListener('click', () => {
+              if (navLinks.classList.contains('active')) {
+                  navLinks.classList.remove('active');
+              }
+          });
+      });
+  
+      // Click outside to close the menu
+      document.addEventListener('click', function(event) {
+          if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+              navLinks.classList.remove('active');
+          }
+      });
+  });
+  // Section Animation for Transition Effect
+window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('.section');
+    const triggerHeight = window.innerHeight * 0.75;
+    const isMobile = window.innerWidth <= 768;
+
+    sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        // Check if the section has already been animated
+        if (!section.classList.contains('animated')) {
+            if (sectionTop < triggerHeight) {
+                section.style.opacity = '1';
+                section.style.transform = 'translateX(0)';
+                section.classList.add('animated'); // Mark section as animated
+            } else if (!isMobile) { // Apply transform only on non-mobile
+                if ((index + 1) % 2 === 0) {
+                    section.style.transform = 'translateX(-100%)';
+                } else {
+                    section.style.transform = 'translateX(100%)';
+                }
+                section.style.opacity = '0';
+            } else {
+                // Reset transform on mobile
+                section.style.transform = 'translateX(0)';
+                section.style.opacity = '1';
+            }
+        }
+    });
+});
+
+
+        // Disable initial opacity and transform on mobile devices
+        document.addEventListener('DOMContentLoaded', function () {
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile) {
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateX(0)';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
