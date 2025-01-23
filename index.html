@@ -107,7 +107,7 @@
             position: absolute;
             width: 0;
             height: 2px;
-            background: #00bfff;
+            background: black;
             left: 50%;
             bottom: -5px;
             transition: width 0.3s ease, left 0.3s ease;
@@ -119,11 +119,11 @@
         }
 
         .nav-links a:hover {
-            color: #00bfff;
+            color: black;
         }
 
         .nav-links a.active {
-            color: #00bfff;
+            color: black;
             font-weight: bold;
         }
 
@@ -154,7 +154,7 @@
   color: white;
   overflow: hidden;
   animation: slideBackground 15s infinite; /* Background slide effect */
-  background-image: url('images/spices.jpg');
+  background-image: url('images/Untitled\ design_20250121_175433_0000.png');
 }
 
 /* Hero Text */
@@ -176,16 +176,23 @@
 
 /* Style for the heading */
 .hero-text h1 {
-  font-size: 1.5em; /* Larger heading for more impact */
+  color: #FFD700;
+  font-size: 1.7em; /* Larger heading for more impact */
   font-weight: 800; /* Bold the heading */
   margin-bottom: 9px; /* Space between heading and paragraph */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 
+.hero-text p{
+  color: #f0d74d;
+  font-size: 0.5em; /* Larger heading for more impact */
+  font-style: italic;
 
+}
 
 .cta-btn {
+  z-index: 1;
   padding: 12px 25px;
   font-size: 15px;
   background-color: rgba(212, 175, 55, 0.8);
@@ -199,21 +206,6 @@
   transform: scale(1.1);
 }
 
-/* Background Sliding Animation */
-@keyframes slideBackground {
-  0% {
-    background-image: url('images/spices.jpg');
-  }
-  33% {
-    background-image: url('images/spices2.jpg');
-  }
-  66% {
-    background-image: url('images/spices3.jpg');
-  }
-  100% {
-    background-image: url('images/spices4.jpg');
-  }
-}
 
 
 
@@ -369,10 +361,12 @@
       /* Hero section */
       .hero-text h1 {
         font-size: 1.5em;
+        color: #FFD700;
       }
 
       .hero-text p {
         font-size: 1em;
+        color: #FFD700;
       }
 
       .cta-btn {
@@ -889,13 +883,13 @@
   }
 
   .hero h1 {
-    font-size: 1.4em; /* Adjust font size for smaller screens */
+    font-size: 0.9em; /* Adjust font size for smaller screens */
     line-height: 1.2; /* Ensure spacing between lines */
     margin-bottom: 10px;
   }
 
   .hero p {
-    font-size: 1em; /* Adjust paragraph size */
+    font-size: 0.3em; /* Adjust paragraph size */
     margin-bottom: 15px;
   }
 
@@ -1001,6 +995,9 @@
   }
 }
 
+
+
+
   </style>
 </head>
 <body>
@@ -1044,7 +1041,11 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-text">
-      <h1>Bringing the World's Finest Spices </h1>
+      <br><br>
+      <h1>AL-HARAM <BR> INTERANTIONAL</h1>
+       
+        <p> We deal in all kind's of Grain SeedS. Pulses ,Spices & Herbs</p>
+       
      
 
     </div>
