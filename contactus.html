@@ -149,6 +149,7 @@
       flex-wrap: wrap;
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .footer-logo {
@@ -208,7 +209,7 @@
     }
 
     .contact-form {
-      max-width: 500px;
+      max-width: 600px; /* Increased max-width */
       margin: 0 auto;
       padding: 30px;
       border-radius: 10px;
@@ -320,6 +321,7 @@
       .footer-content {
         flex-direction: column;
         align-items: center;
+        width: 100%; /* Ensure footer content is aligned correctly */
       }
 
       .footer-info,
@@ -327,6 +329,7 @@
       .footer-contact {
         text-align: center;
         margin: 20px 0;
+        min-width: auto; /* Prevent squeezing */
       }
 
       .top-bar {
@@ -369,10 +372,9 @@
         font-size: 10px;
       }
     }
-
   </style>
-
 </head>
+
 <body>
 
   <!-- Top Bar for Address, Phone, and Email -->
