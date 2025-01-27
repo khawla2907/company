@@ -897,7 +897,20 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+ .see-more-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
+  .see-more-button:hover {
+    background-color: #0056b3;
+  }
 
 
 
@@ -1244,6 +1257,10 @@
 
     </div>
   </div>
+  <button id="seeMoreProducts" class="see-more-button">
+  See More of Our Products
+</button>
+
 
 
 
@@ -1548,6 +1565,13 @@ document.addEventListener("DOMContentLoaded", () => {
   defer
 ></script>
 
+<script>
+  // Add event listener to the button
+  document.getElementById("seeMoreProducts").addEventListener("click", () => {
+    window.location.href = "products.html";
+  });
+</script>
 
+  
 </body>
 </html>
