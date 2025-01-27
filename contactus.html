@@ -6,377 +6,372 @@
   <title>Al Haram International Import And Export</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
- <!-- For favicon on tab -->
- <link rel="icon" href="images/logo.png" type="image/x-icon">
-    
+  <!-- For favicon on tab -->
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
 
- 
- <!-- For mobile devices (optional) -->
- <link rel="apple-touch-icon" href="images/logo.png">
- <style>
- /* Basic Reset */
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
- 
- /* Body and Background */
- body {
-   font-family: 'Roboto', sans-serif;
-   height: 100vh;
-   overflow-x: hidden;
-   background-color: #000; /* Black background */
-   color: #cea623; /* Rich gold text */
-   position: relative;
- }
- 
- /* Top Bar for Address, Phone, and Email */
- .top-bar {
-   background-color: black;
-   color: white;
-   padding: 8px 10px;
-   text-align: center;
-   font-size: 12px;
-   position: fixed;
-   top: 0;
-   width: 100%;
-   z-index: 9999;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap: wrap;
- }
- 
- .top-bar a {
-   color: #cea623;
-   text-decoration: none;
- }
- 
- /* Navbar */
- .navbar {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 10px 30px;
-   background-color: rgba(212, 175, 55, 0.8);
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-   position: fixed;
-   width: 100%;
-   top: 30px; /* Offset by top bar height */
-   z-index: 1000;
-   backdrop-filter: blur(10px);
-   border-bottom: 1px solid rgba(212, 175, 55, 0.4);
- }
- 
- .logo img {
-   height: 70px;
-   width: auto;
- }
- 
- .nav-links {
-   display: flex;
-   list-style: none;
- }
- 
- .nav-links li {
-   margin: 0 20px;
- }
- 
- .nav-links a {
-   position: relative;
-   text-decoration: none;
-   color: black;
-   font-size: 1.1em;
-   transition: color 0.3s ease;
- }
- 
- /* Underline Animation */
- .nav-links a::after {
-   content: '';
-   position: absolute;
-   width: 0;
-   height: 2px;
-   background: black;
-   left: 50%;
-   bottom: -5px;
-   transition: width 0.3s ease, left 0.3s ease;
- }
- 
- .nav-links a:hover::after {
-   width: 100%;
-   left: 0;
- }
- 
- .nav-links a:hover {
-   color: black;
- }
- 
- .nav-links a.active {
-   color: black;
-   font-weight: bold;
- }
- 
- /* Mobile Menu Toggle */
- .menu-toggle {
-   display: none;
-   flex-direction: column;
-   cursor: pointer;
- }
- 
- .menu-toggle span {
-   width: 35px;
-   height: 3px;
-   background-color: black;
-   margin: 5px;
- }
- 
- /* Footer Section */
- .footer {
-   background-color: rgba(235, 191, 49, 0.9);
-   color: black;
-   padding: 40px 20px;
-   width: 100%;
-   box-sizing: border-box;
-   border-top: 1px solid rgba(184, 146, 22, 0.5);
-   backdrop-filter: blur(10px);
-   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
- }
- 
- .footer-content {
-   display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
-   flex-wrap: wrap;
-   max-width: 1200px;
-   margin: 0 auto;
- }
- 
- .footer-logo {
-   margin-right: 20px;
- }
- 
- .footer-logo img {
-   height: 100px;
-   width: auto;
- }
- 
- .footer-info,
- .footer-links,
- .footer-contact {
-   color: black;
-   flex: 1;
-   min-width: 200px;
-   margin: 10px;
-   text-align: left;
- }
- 
- .footer-info h2 {
-   font-size: 1.8em;
-   margin-bottom: 10px;
- }
- 
- .footer-links ul {
-   list-style: none;
-   padding: 0;
- }
- 
- .footer-links li {
-   margin: 5px 0;
- }
- 
- .footer-links a {
-   color: black;
-   text-decoration: none;
-   transition: color 0.3s;
- }
- 
- .footer-links a:hover {
-   text-decoration: underline;
- }
- 
- .footer-bottom {
-   margin-top: 20px;
-   text-align: center;
-   font-size: 0.8em;
- }
- 
- /* Contact Form Section */
- .contact-form-section {
-   padding: 50px 20px;
-   text-align: center;
-   background-color: black;
+  <!-- For mobile devices (optional) -->
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
- }
- 
- .contact-form {
-   max-width: 500px;
-   margin: 0 auto;
-   padding: 30px;
+    /* Body and Background */
+    body {
+      font-family: 'Roboto', sans-serif;
+      height: 100%;
+      overflow-x: hidden; /* Prevent horizontal overflow */
+      background-color: #000; /* Black background */
+      color: #cea623; /* Rich gold text */
+      position: relative;
+      min-width: 100vw; /* Prevent body from shrinking */
+    }
 
-   border-radius: 10px;
-   background-color: #ffffff;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-/* Golden glowing border */
-  border: 2px solid #FFD700; /* Solid gold border */
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
-  animation: glow 1.5s ease-in-out infinite; /* Animation for glowing effect */
- }
- 
- .contact-form h2 {
-   margin-bottom: 20px;
-   color: #1a1a1a;
- }
- 
- .form-group {
-   margin-bottom: 20px;
-   text-align: left;
- }
- 
- .form-group label {
-   display: block;
-   margin-bottom: 5px;
-   color: #333;
- }
- 
- .form-group input,
- .form-group textarea {
-   width: 100%;
-   padding: 10px;
-   border: 2px solid gold;
-   border-radius: 5px;
-   outline: none;
-   font-size: 1em;
- }
- 
- .form-group input:focus,
- .form-group textarea:focus {
-   border-color: #ffbf00;
-   box-shadow: 0 0 5px #ffbf00;
- }
- 
- .btn-submit {
-   background-color: gold;
-   color: #1a1a1a;
-   border: none;
-   padding: 10px 20px;
-   font-size: 1em;
-   border-radius: 5px;
-   cursor: pointer;
-   transition: background-color 0.3s;
- }
- 
- .btn-submit:hover {
-   background-color: #ffbf00;
- }
- 
-
- .whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.whatsapp-icon {
-  width: 50px;
-  height: 50px;
-}
-
- /* Responsive Design */
- @media (max-width: 768px) {
-   .nav-links {
-     display: none;
-     position: fixed;
-     top: 95px;
-     left: 0;
-     right: 0;
-     background-color: rgba(212, 175, 55, 0.8);
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     transition: transform 0.3s ease-in-out;
-     transform: translateY(-100%);
-     z-index: 999;
-     width: 100%;
-   }
- 
-   .nav-links.active {
-     display: flex;
-     transform: translateY(0);
-   }
- 
-   .nav-links li {
-     margin: 15px 0;
-   }
- 
-   .menu-toggle {
-     display: flex;
-     cursor: pointer;
-     justify-content: center;
-     align-items: center;
-   }
- 
-   .menu-toggle span {
-     background-color: black;
-   }
- 
-   .footer-content {
-     flex-direction: column;
-     align-items: center;
-   }
- 
-   .footer-info,
-   .footer-links,
-   .footer-contact {
-     text-align: center;
-     margin: 20px 0;
-   }
+    /* Top Bar for Address, Phone, and Email */
     .top-bar {
-     font-size: 10px;
-   }
- }
- 
- @media (max-width: 380px) {
-   body {
-     font-size: 14px;
-   }
- 
-   .navbar {
-     padding: 10px 15px;
-   }
- 
-   .nav-links {
-     font-size: 0.9em;
-   }
- 
-   .menu-toggle span {
-     width: 25px;
-     height: 2px;
-   }
- 
-   .footer-content {
-     flex-direction: column;
-     text-align: center;
-   }
- 
-   .footer-logo img {
-     width: 80px;
-   }
- 
-   .footer-bottom {
-     font-size: 0.8em;
-   }
- 
-   .top-bar {
-     font-size: 10px;
-   }
- }
- 
+      background-color: black;
+      color: white;
+      padding: 8px 10px;
+      text-align: center;
+      font-size: 12px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-bar a {
+      color: #cea623;
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(212, 175, 55, 0.8);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 30px; /* Offset by top bar height */
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    .logo img {
+      height: 70px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin: 0 20px;
+    }
+
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: black;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    /* Underline Animation */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: black;
+      left: 50%;
+      bottom: -5px;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .nav-links a:hover {
+      color: black;
+    }
+
+    .nav-links a.active {
+      color: black;
+      font-weight: bold;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 35px;
+      height: 3px;
+      background-color: black;
+      margin: 5px;
+    }
+
+    /* Footer Section */
+    .footer {
+      background-color: rgba(235, 191, 49, 0.9);
+      color: black;
+      padding: 40px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      border-top: 1px solid rgba(184, 146, 22, 0.5);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      margin-right: 20px;
+    }
+
+    .footer-logo img {
+      height: 100px;
+      width: auto;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-contact {
+      color: black;
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+      text-align: left;
+    }
+
+    .footer-info h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin: 5px 0;
+    }
+
+    .footer-links a {
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.8em;
+    }
+
+    /* Contact Form Section */
+    .contact-form-section {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: black;
+    }
+
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #FFD700; /* Golden border */
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Glowing effect */
+      animation: glow 1.5s ease-in-out infinite; /* Animation for glowing effect */
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid gold;
+      border-radius: 5px;
+      outline: none;
+      font-size: 1em;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #ffbf00;
+      box-shadow: 0 0 5px #ffbf00;
+    }
+
+    .btn-submit {
+      background-color: gold;
+      color: #1a1a1a;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #ffbf00;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .whatsapp-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 95px;
+        left: 0;
+        right: 0;
+        background-color: rgba(212, 175, 55, 0.8);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        z-index: 999;
+        width: 100%;
+      }
+
+      .nav-links.active {
+        display: flex;
+        transform: translateY(0);
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .menu-toggle span {
+        background-color: black;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-info,
+      .footer-links,
+      .footer-contact {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .top-bar {
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      body {
+        font-size: 14px;
+      }
+
+      .navbar {
+        padding: 10px 15px;
+      }
+
+      .nav-links {
+        font-size: 0.9em;
+      }
+
+      .menu-toggle span {
+        width: 25px;
+        height: 2px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-logo img {
+        width: 80px;
+      }
+
+      .footer-bottom {
+        font-size: 0.8em;
+      }
+
+      .top-bar {
+        font-size: 10px;
+      }
+    }
 
   </style>
+
 </head>
 <body>
 
