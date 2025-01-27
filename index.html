@@ -1558,6 +1558,52 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+  <script>
+  // Map Initialization Function
+  function initMap() {
+    const location = { lat: 25.3985483, lng: 68.3713783 }; // Al Haram International location
+
+    // Create a Google Map centered at the location
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: location,
+    });
+
+    // Add a marker for Al Haram International
+    const marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      title: "Al Haram International",
+    });
+  }
+
+  // Small Circle Animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const smallCircles = document.querySelectorAll('.small-circle'); // Select all small circles
+
+    if (smallCircles.length > 0) {
+      // Set up Intersection Observer
+      const circleObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active'); // Add 'active' class when in view
+          } else {
+            entry.target.classList.remove('active'); // Remove 'active' when out of view
+          }
+        });
+      }, {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      });
+
+      // Observe each circle
+      smallCircles.forEach((circle) => {
+        circleObserver.observe(circle);
+      });
+    }
+  });
+</script>
+
+
 <!-- Load Google Maps JavaScript API with your API Key -->
 <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAekM2nsdCz-lvC7w2n5tRzmgz16IHcHAM&callback=initMap"
