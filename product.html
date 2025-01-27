@@ -938,9 +938,10 @@ main {
           const description = button.getAttribute('data-description');
 
           modalImage.src = image;
-          modalTitle.textContent = name;
-          modalDescription.textContent = description;
-          whatsAppButton.href = `https://wa.me/?text=I'm%20interested%20in%20${name}!`;
+modalTitle.textContent = name;
+modalDescription.textContent = description;
+whatsAppButton.href = `https://wa.me/923009377593?text=I'm%20interested%20in%20${encodeURIComponent(name)}!`;
+
 
           productModal.style.display = 'flex';
         });
