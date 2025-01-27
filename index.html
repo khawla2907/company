@@ -1066,36 +1066,35 @@
   </div>
   </section>
 
-  <section class="our-products">
-    <h2>Our Products</h2>
-    <div class="product-container">
-        <div class="product">
-            <img src="images/seed.jpg" alt="Mustard Seeds">
-            <h3>Mustard Seeds</h3>
-            <p class="product-description">High-quality mustard seeds used for various....</p>
-            <a href="product.html" class="read-more-btn">Read More</a>
-        </div>
-        <div class="product">
-            <img src="images/red.jpg" alt="Red Chilli Powder">
-            <h3>Red Chilli Powder</h3>
-            <p class="product-description">A rich blend of red chilies...</p>
-            <a href="product.html" class="read-more-btn">Read More</a>
-        </div>
-        <div class="product">
-            <img src="images/nig.jpg" alt="Nigella Seeds">
-            <h3>Nigella Seeds</h3>
-            <p class="product-description">Nigella seeds, often known as black cumin....</p>
-            <a href="product.html" class="read-more-btn">Read More</a>
-        </div>
-        <div class="product">
-            <img src="images/plum.jpg" alt="Plum Powder">
-            <h3>Plum Powder</h3>
-            <p class="product-description">A tangy, sweet powder made from dried plums.....</p>
-            <a href="product.html" class="read-more-btn">Read More</a>
-        </div>
+
+  <section class="categories">
+    <h2>  Our Products </h2>
+    <button class="category-button active" data-category="grainsSeeds">Grains Seeds</button>
+   
+
+    <button class="category-button" data-category="spices">Spices</button>
+    <button class="category-button" data-category="herbs">Herbs</button>
+  </section>
+
+  <section class="product-grid" id="productGrid"></section>
+
+  <!-- Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-button" id="closeModal">&times;</span>
+      <img src="" alt="Product Image" id="modalImage">
+      <h2 id="modalTitle">Product Name</h2>
+      <p id="modalDescription">Full description of the product goes here.</p>
+    <a href="https://wa.me/923009377593?text=I'm%20interested%20in%20this%20product!" 
+   target="_blank" id="whatsAppButton">Contact on WhatsApp</a>
+
     </div>
-    <a href="product.html" class="see-more-btn">See More</a>
-</section>
+  </div>
+
+
+
+
+
 
 <section class="why-choose-us">
   <h2>Why Choose Us?</h2>
@@ -1334,6 +1333,141 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Al Haram International", // Text that shows when the marker is hovered over
     });
   }
+
+   <script>
+    const products = {
+        grainsSeeds: [
+    {
+        name: 'Fennel Seeds',
+        image: 'images/fennelseeds.jpg',
+        description: 'Fennel seeds are known for their aromatic and slightly sweet flavor, making them a staple in cuisines around the world. These seeds are not only used to enhance the flavor of dishes but are also valued for their numerous health benefits, including aiding digestion and reducing inflammation. Perfect for teas, spice blends, and culinary recipes.'
+    },
+    {
+        name: 'Fenugreek Seeds',
+        image: 'images/fenu.jpg',
+        description: 'Fenugreek seeds are a powerhouse of nutrition with a distinct, nutty flavor. These golden-brown seeds are widely used in traditional recipes and herbal remedies. Known for their ability to improve digestion, regulate blood sugar, and boost hair and skin health, they are a versatile addition to your pantry. Ideal for curries, pickles, and health tonics.'
+    },
+    {
+        name: 'Mustard Seeds',
+        image: 'images/mustard.jpg',
+        description: 'Our mustard seeds are carefully selected to bring a robust and tangy flavor to your recipes. Whether used for tempering or grinding into a paste, these seeds are a versatile ingredient in both traditional and modern dishes. Rich in antioxidants and nutrients, mustard seeds also offer several health benefits, including supporting metabolism and heart health.'
+    },
+    {
+        name: 'Chia Seeds',
+        image: 'images/chia.jpg',
+        description: 'Chia seeds are a superfood known for their impressive nutritional profile, including high levels of omega-3 fatty acids, fiber, and protein. These tiny seeds are incredibly versatile and can be added to smoothies, puddings, and baked goods. Known for their ability to keep you full and energized, chia seeds are a must-have for a healthy lifestyle.'
+    },
+    {
+        name: 'Cumin Seeds',
+        image: 'images/cumin.jpg',
+        description: 'Cumin seeds are prized for their warm, earthy aroma and flavor. A staple in many spice blends, they are widely used in cuisines ranging from Indian to Middle Eastern and Latin American. Cumin seeds not only enhance the taste of dishes but also have health benefits, such as improving digestion and boosting immunity. Perfect for curries, soups, and roasted vegetables.'
+    }
+    
+    
+],
+      
+    
+
+      spices : [
+    { 
+        name: 'Red Chilli Powder', 
+        image: 'images/redchillipowder.jpg', 
+        description: 'Red Chilli Powder is a key ingredient in many cuisines, known for its vibrant color and bold, spicy flavor. Made from ground dried red chillies, it adds heat and depth to dishes like curries, stews, and soups. Rich in antioxidants and vitamins, this spice not only enhances the flavor but also provides numerous health benefits, such as boosting metabolism and aiding digestion.' 
+    },
+    { 
+        name: 'Red Chilli Crushed', 
+        image: 'images/redchillicrushed.jpg', 
+        description: 'Crushed Red Chilli is made from dried red chillies that are coarsely ground. It has a more intense heat and a slightly smoky flavor compared to the powdered form. It is commonly used as a garnish for pizza, pasta, and salads or added to cooking for an extra kick. This spice is also known for its rich content of capsaicin, which has anti-inflammatory properties and supports digestive health.' 
+    },
+    { 
+        name: 'Red Chilli Seeds', 
+        image: 'images/redchilliseeds.jpg', 
+        description: 'Red Chilli Seeds are the seeds harvested from ripe chillies. While they are often discarded in cooking, they carry a potent level of heat and can be used to enhance the spice profile of dishes. Crushed or ground, they can be added to spice blends, sauces, and marinades. Red Chilli Seeds are rich in vitamins A, C, and K, and their heat properties make them useful in both cooking and traditional medicine for boosting circulation.' 
+    }
+],
+   herbs : [
+  {
+    name: "Dry Rose",
+    image: "images/rose.jpg",
+    description: "Dry rose petals are known for their fragrant aroma and are often used in herbal teas, skincare products, and traditional remedies to promote relaxation and skin health."
+  },
+  {
+    name: "Gentiana (Gul-e-Gafiz)",
+    image:  "images/gul.jpg",
+    description: "Gentiana, also known as Gul-e-Gafiz, is a traditional herb used for digestive health and to support liver function due to its bitter properties."
+  },
+  {
+    name: "Blue Mallow (Tukme Khubbaji)",
+    image:  "images/khub.jpg",
+    description: "Blue mallow, or Tukme Khubbaji, is a soothing herb used for its anti-inflammatory properties, often incorporated into teas and topical treatments."
+  },
+  {
+    name: "Black Nightshade (Mako)",
+    image:  "images/mako.jpg",
+    description: "Black nightshade, locally known as Mako, is commonly used in herbal medicine for its potential benefits in managing inflammation and digestive health."
+  }
+    };
+
+    const productGrid = document.getElementById('productGrid');
+    const productModal = document.getElementById('productModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const whatsAppButton = document.getElementById('whatsAppButton');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.category-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.category-button').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const category = button.getAttribute('data-category');
+        loadProducts(category);
+      });
+    });
+
+    function loadProducts(category) {
+      productGrid.innerHTML = '';
+      products[category].forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <button data-name="${product.name}" data-image="${product.image}" data-description="${product.description}">More Info</button>
+        `;
+        productGrid.appendChild(productCard);
+      });
+
+      document.querySelectorAll('.product-card button').forEach(button => {
+        button.addEventListener('click', () => {
+          const name = button.getAttribute('data-name');
+          const image = button.getAttribute('data-image');
+          const description = button.getAttribute('data-description');
+
+         modalImage.src = image;
+modalTitle.textContent = name;
+modalDescription.textContent = description;
+whatsAppButton.href = `https://wa.me/923009377593?text=I'm%20interested%20in%20${encodeURIComponent(name)}!`;
+
+
+          productModal.style.display = 'flex';
+        });
+      });
+    }
+
+    closeModal.addEventListener('click', () => {
+      productModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === productModal) {
+        productModal.style.display = 'none';
+      }
+    });
+
+    // Load "Grains" by default
+    loadProducts('grainsSeeds');
+
 </script>
 
 <!-- Load Google Maps JavaScript API with your API Key -->
